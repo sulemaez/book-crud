@@ -21,4 +21,4 @@ let BookSchema = new Schema({
     }
 })
 
-module.exports = moongoose.Model('Book',BookSchema)
+module.exports = moongoose.model('Book',BookSchema)

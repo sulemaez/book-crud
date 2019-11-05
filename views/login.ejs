@@ -14,11 +14,21 @@
 <body class="form-v5">
 	<div class="page-content">
 		<div class="form-v5-content">
-			<form class="form-detail" method="post">
+			<form class="form-detail" action="/signin" method="post">
+					<% if(error){ %>
+						<li>
+							<p style="color: red;"><%=errorMessage%></p>
+						</li>
+					<% }%>
+					<% if(message){ %>
+						<li>
+							<p style="color: green;"><%=message%></p>
+						</li>
+					<% }%>
 				<h2>Login </h2>
 				<div class="form-row">
 					<label for="full-name">User Name</label>
-					<input type="text" name="user-name" id="user-name" class="input-text" placeholder="User Name" required>
+					<input type="text" name="username" id="username" class="input-text" placeholder="User Name" required>
 					<i class="fas fa-user"></i>
 				</div>
 
@@ -31,7 +41,7 @@
 					<input type="submit" name="login" id="loginBtn" class="register" value="Login">
 				</div>
                  <div style="display: flex;justify-content: center; align-items: center;">
-					<a href="/signup.html">Sign U</a>
+					<a href="/signup">Sign Up</a>
 				 </div>
 			</form>
 		</div>

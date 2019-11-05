@@ -23,7 +23,6 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-    "mongo-connect": "0.0.6",
     "mongoose": "^5.7.7",
     "uuid": "^3.3.3"
   }

@@ -10,10 +10,17 @@
 <body>
         <nav class="navbar navbar-light bg-light justify-content-between">
                 <a class="navbar-brand">CRUD</a>
-                <button class="btn btn-danger">LOGOUT</button>
+                <form method="get" action="/logout">
+                    <input type="submit" class="btn btn-danger" value="LOGOUT">
+                </form>
               </nav>
 
         <div class="container mt-4 pt-4">
+              <% if(message){ %>
+                <li>
+                  <p style="color: green;"><%=message%></p>
+                </li>
+              <% }%>
                 <h4 class="text-center">Books</h4>
                 <div style="display: flex; justify-content: center;align-items: center;">
                     <a class="btn btn-primary" href="/add">ADD NEW</a>
@@ -31,18 +38,20 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>4534</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>1990</td>
-                            <td>23</td>
-                            <td>
-                                <button class="btn btn-primary">Edit</button>
-                                <button class="btn btn-danger">Remove</button>
-                            </td>
-                          </tr>
+                           <% for(var i = 0 ;i < books.length;i++){ %>
+                              <tr>
+                                <th scope="row"><%=(i+1)%></th>
+                                <td><%=books[i].isbn%></td>
+                                <td><%=books[i].title%></td>
+                                <td><%=books[i].author%></td>
+                                <td><%=books[i].year%></td>
+                                <td><%=books[i].amount%></td>
+                                <td>
+                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-danger">Remove</button>
+                                </td>
+                              </tr>   
+                           <% }%> 
                         </tbody>
                       </table>
         </div>

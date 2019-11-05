@@ -12,3 +12,21 @@ exports.hash = async (password) =>{
         })
     })
 }
+
+//checks if the given password mataches the stored one in db
+exports.confirm = (pass,hash)=> {
+    return new Promise(resolve => {
+        //function in byrpt used to compare a plain text to a hash
+        //takes the plain text then the hash   
+        bycrpt.compare(pass,hash,(err,res)=>{
+             //if an error occurs or the hash doesn't match 
+             //return false 
+             if(err || !res){
+                 console.log(err || res)
+                 resolve(false)
+             }
+             //if password matches return true
+             resolve(true)
+        })
+    })
+}
