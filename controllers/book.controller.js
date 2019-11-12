@@ -27,16 +27,17 @@ exports.goHome = (res,message = false)=>{
 }
 
 function goHomeFn(res,message = false){
-    
-    Book.find({},(err,books)=>{
+
+      Book.find({},(err,books)=>{
         
-        if(err){
-            console.log("Error getting all")
-            res.render('home',{ message : message,books:[]})
-            return
-        }
-       
-       let load = { message : message,books:books }
-       res.render('home',load)
-    })
+         if(err){
+             console.log("Error getting all")
+             res.render('home',{ message : message,books:[]})
+             return
+         }
+        
+        let load = { message : message,books:books }
+        res.render('home',load)
+     })
+   
 }
