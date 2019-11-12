@@ -9,7 +9,7 @@
 </head>
 <body>
         <nav class="navbar navbar-light bg-light justify-content-between">
-                <a class="navbar-brand">CRUD</a>
+                <a href="/" class="navbar-brand">CRUD</a>
                 <form method="get" action="/logout">
                     <input type="submit" class="btn btn-danger" value="LOGOUT">
                 </form>
@@ -47,8 +47,12 @@
                                 <td><%=books[i].year%></td>
                                 <td><%=books[i].amount%></td>
                                 <td>
-                                    <button class="btn btn-primary">Edit</button>
-                                    <button class="btn btn-danger">Remove</button>
+                                   
+                                  <a  href="/add?bookId=12" class="btn btn-primary">Edit</a>
+   
+                                   <form action="" class="form inline-form" method="get">
+                                      <button class="btn btn-danger">Remove</button>
+                                   </form>
                                 </td>
                               </tr>   
                            <% }%> 

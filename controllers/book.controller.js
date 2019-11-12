@@ -13,11 +13,11 @@ exports.create = (req,res) =>{
 
    book.save((err)=>{
       if(err){ 
-         console.log(err) 
+        console.log(err) 
         res.render('view',{ edit : false})
         return
       }  
-      goHomeFn(res,"Book edited")
+      goHomeFn(res,"Book Added Successfully !")
    })
 }
 

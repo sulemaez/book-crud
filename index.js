@@ -9,7 +9,7 @@ const MongoStore = require('connect-mongo')(session)
 const router = require('./routes/main.route')
 const bookcon = require('./controllers/book.controller')
 
-app.use(bodyParser.urlencoded({ extended : true}));
+app.use(bodyParser.urlencoded({ extended : false}));
 app.use(cookieParser());
 
 //connect to mongo
