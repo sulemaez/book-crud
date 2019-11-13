@@ -14,26 +14,27 @@
               </nav>
 
         <div class="container mt-4 pt-4">
-                <form action="<%=edit?'/edit':'/create'%>" method="post">
+    
+                <form action="<%=edit == true?'/edit':'/create'%>" method="post">
                     <div class="form-group">
                         <label for="isbn">ISBN</label>
-                        <input required="true" type="text" class="form-control" name="isbn" id="isbn" placeholder="Enter ISBN">
+                        <input required="true" type="text" class="form-control" name="isbn" id="isbn" placeholder="Enter ISBN"  value=<%=edit == true? book.isbn :''%> >
                      </div>
                      <div class="form-group">
                         <label for="title">Title</label>
-                        <input required="true" type="text" class="form-control" name="title" id="title" placeholder="Title">
+                        <input required="true" type="text" class="form-control" name="title" id="title" placeholder="Title" value=<%=edit == true? book.title :''%>>
                     </div>
                     <div class="form-group">
                         <label for="author">Author</label>
-                        <input required="true" type="text" class="form-control" name="author" id="author" placeholder="Author">
+                        <input required="true" type="text" class="form-control" name="author" id="author" placeholder="Author" value=<%=edit == true? book.author :''%>>
                     </div>
                     <div class="form-group">
                         <label for="year">Year</label>
-                        <input required="true" type="text" class="form-control" name="year" id="year" placeholder="Year">
+                        <input required="true" type="text" class="form-control" name="year" id="year" placeholder="Year" value=<%=edit == true? book.year :''%>>
                     </div>
                     <div class="form-group">
                         <label for="amount">Amount</label>
-                        <input required="true" type="number" class="form-control" name="amount" id="amount" placeholder="Amount">
+                        <input required="true" type="number" class="form-control" name="amount" id="amount" placeholder="Amount" value=<%=edit == true? book.amount :''%>>
                     </div>
                      <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

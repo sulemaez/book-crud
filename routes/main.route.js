@@ -27,6 +27,12 @@ router.get('/add', (req, res) => {
    res.render('view',{ edit: false})
 })
 
+router.get('/edit',bookcon.getEdit)
+
+router.post('/edit',bookcon.editBook)
+
+router.get('/remove',bookcon.removeBook)
+
 router.post('/create',bookcon.create)
 
 router.post('/register',authcon.register)

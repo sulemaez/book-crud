@@ -26,6 +26,42 @@ exports.goHome = (res,message = false)=>{
    goHomeFn(res,message)
 }
 
+exports.removeBook = (req,res) =>{
+  Book.deleteOne({  isbn : req.query.isbn },(err)=>{
+     if(err){
+        goHomeFn(res,"Error deleting book")
+        return
+     }
+
+     goHomeFn(res,"Book deleted succefully !")
+  })
+
+}
+
+exports.getEdit = (req,res) =>{
+   
+   Book.findOne({isbn : req.query.isbn },(err,book)=>{
+       
+       if(err){
+          goHomeFn(res,"error getting book")
+          return
+       }
+
+       res.render('view',{ edit : true,book : book})
+   })
+}
+
+exports.editBook = (req,res)=>{
+
+   Book.findOneAndUpdate({isbn : req.body.isbn},req.body,(err)=>{
+      if(err){
+         goHomeFn(res,"Error updating book")
+         return
+      }
+      goHomeFn(res,"Book updated successfully !")
+   })
+}
+
 function goHomeFn(res,message = false){
 
       Book.find({},(err,books)=>{

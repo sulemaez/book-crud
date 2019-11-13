@@ -48,11 +48,8 @@
                                 <td><%=books[i].amount%></td>
                                 <td>
                                    
-                                  <a  href="/add?bookId=12" class="btn btn-primary">Edit</a>
-   
-                                   <form action="" class="form inline-form" method="get">
-                                      <button class="btn btn-danger">Remove</button>
-                                   </form>
+                                  <a  href="/edit?isbn=<%=books[i].isbn%>" class="btn btn-primary">Edit</a>
+                                  <a  href="/remove?isbn=<%=books[i].isbn%>" class="btn btn-danger">Remove</a>
                                 </td>
                               </tr>   
                            <% }%> 
